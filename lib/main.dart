@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Pasal',
       theme: theme(),
       onGenerateRoute: Routegenerator.getRoute,
-      initialRoute: Routes.signInRoute,
+      initialRoute: Routes.initialScreenRoute,
     );
   }
 }

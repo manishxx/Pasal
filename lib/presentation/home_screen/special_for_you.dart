@@ -80,7 +80,7 @@ class SpecialForYou extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Container(
@@ -100,7 +100,7 @@ class SpecialForYou extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       left: 120,
                       bottom: 20,
                       child: Text(

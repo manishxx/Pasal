@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           PopularProducts(),
         ]),
       ),
-      bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNav(),
     );
   }
 }

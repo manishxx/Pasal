@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pasal/presentation/resources/assets_manager.dart';
-import 'package:pasal/presentation/resources/color_manager.dart';
+import 'package:pasal/models/products.dart';
+import 'package:pasal/presentation/widgets/product_card.dart';
 import '../resources/size_config.dart';
 
 class PopularProducts extends StatelessWidget {
@@ -28,71 +28,17 @@ class PopularProducts extends StatelessWidget {
           ),
         ),
         SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Container(
-                height: getProportionateScreenHeight(150),
-                width: getProportionateScreenWidth(300),
-                decoration: BoxDecoration(
-                    color: ColorManager.bgWhite,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: Image.asset(
-                        ImageAssets.popularProduct1,
-                      ),
-                    ),
-                    Positioned(
-                      left: 120,
-                      bottom: 20,
-                      child: Text(
-                        'Gaming',
-                        style: TextStyle(
-                          fontFamily: 'Muli',
-                          color: Colors.white,
-                          fontSize: 30,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Container(
-                height: getProportionateScreenHeight(150),
-                width: getProportionateScreenWidth(300),
-                decoration: BoxDecoration(
-                    color: ColorManager.bgWhite,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: Image.asset(
-                        ImageAssets.popularProduct2,
-                      ),
-                    ),
-                    Positioned(
-                      left: 120,
-                      bottom: 20,
-                      child: Text(
-                        'Men' 's Clothing',
-                        style: TextStyle(
-                          fontFamily: 'Muli',
-                          color: Colors.white,
-                          fontSize: 30,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
+            child: SizedBox(
+                height: getProportionateScreenHeight(300),
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: demoProducts.length,
+                    itemBuilder: (context, index) {
+                      if (demoProducts[index].isPopular) {
+                        return ProductCard(product: demoProducts[index]);
+                      }
+                      return const SizedBox.shrink();
+                    })))
       ],
     ));
   }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pasal/presentation/home_screen/home_screen.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
+
+import '../../profile_page/profile_page.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({super.key});
@@ -21,11 +24,11 @@ class BottomNav extends StatelessWidget {
                 size: iconSize,
               ),
               onPressed: () {
-                // Navigator.of(context).pushReplacement(
-                //   MaterialPageRoute(
-                //     builder: (context) => const HomeScreen(),
-                //   ),
-                // );
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                );
               },
             ),
             IconButton(
@@ -51,11 +54,11 @@ class BottomNav extends StatelessWidget {
                 size: iconSize,
               ),
               onPressed: () {
-                // Navigator.of(context).pushReplacement(
-                //   MaterialPageRoute(
-                //     //builder: (context) => const ProfileScreen(),
-                //   ),
-                // );
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileScreen(),
+                  ),
+                );
               },
             ),
           ],

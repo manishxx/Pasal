@@ -12,10 +12,12 @@ class ColorManager {
 
   static Color kPrimaryLightColor = HexColor.fromHex("#CDDEEE");
   static const kPrimaryGradientColor = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
-  );
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        Color(0xff5784BA),
+        Color(0xffffffff),
+      ]);
 // new colors
   static Color darkPrimary = HexColor.fromHex("#d17d11");
   static Color grey1 = HexColor.fromHex("#707070");
