@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pasal/models/api_products.dart';
 
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/duration_constants.dart';
@@ -8,7 +9,7 @@ import '../../../models/products.dart';
 
 class ProductImages extends StatefulWidget {
   const ProductImages({Key? key, required this.product}) : super(key: key);
-  final Product product;
+  final Products product;
 
   @override
   State<ProductImages> createState() => _ProductImagesState();
@@ -26,16 +27,18 @@ class _ProductImagesState extends State<ProductImages> {
             aspectRatio: 1,
             child: Hero(
               tag: widget.product.id.toString(),
-              child: Image.asset(widget.product.images[selectedImage]),
+              child: Image.network(widget.product.img),
             ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...List.generate(widget.product.images.length,
-                (index) => buildSmallProductPreview(index)),
-          ],
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ...List.generate(1, (index) => buildSmallProductPreview(index)),
+            ],
+          ),
         )
       ],
     );
@@ -62,7 +65,7 @@ class _ProductImagesState extends State<ProductImages> {
                 .withOpacity(selectedImage == index ? 1 : 0),
           ),
         ),
-        child: Image.asset(widget.product.images[index]),
+        child: Image.network(widget.product.img),
       ),
     );
   }

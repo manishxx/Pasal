@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pasal/presentation/home_screen/home_screen.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 
-import '../../profile_page/profile_page.dart';
+import '../../profile_page/profile_screen.dart';
+import '../resources/routes_manager.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({super.key});
@@ -39,14 +41,16 @@ class BottomNav extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            // IconButton(
-            //   icon: Icon(
-            //     Icons.shopping_cart,
-            //     color: Colors.white,
-            //     size: iconSize,
-            //   ),
-            //   onPressed: () {},
-            // ),
+            IconButton(
+              icon: Icon(
+                Icons.shopping_cart,
+                color: Colors.white,
+                size: iconSize,
+              ),
+              onPressed: () {
+                Get.offAllNamed(Routes.cartRoute);
+              },
+            ),
             IconButton(
               icon: Icon(
                 Icons.person,

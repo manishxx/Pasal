@@ -17,7 +17,7 @@ class ImageAssets {
   static const String errorIcon = "$iconPath/Error.svg";
 
   static const String arrowRightIcon = "$iconPath/arrow_right.svg";
-  static const String backIcon = "$iconPath/BackICon.svg";
+  static const String backIcon = "$iconPath/back_icon.svg";
   static const String bellIcon = "$iconPath/Bell.svg";
   static const String billIcon = "$iconPath/Bill Icon.svg";
   static const String callIcon = "$iconPath/Call.svg";

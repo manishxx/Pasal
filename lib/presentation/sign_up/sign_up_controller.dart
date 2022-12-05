@@ -3,23 +3,28 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:pasal/data/local/shared_preferences/shared_preference_manager.dart';
-import 'package:pasal/data/network/api_auth_provider.dart';
 import 'package:pasal/presentation/base_model/base_model.dart';
 
-import '../../../app/constants/enums.dart';
-import '../../../models/token.dart';
-import '../../resources/routes_manager.dart';
+import '../../app/constants/enums.dart';
+import '../../data/local/shared_preferences/shared_preference_manager.dart';
+import '../../data/network/api_auth_provider.dart';
+import '../../models/token.dart';
+import '../resources/routes_manager.dart';
 
-class SignInController extends BaseController {
+class SignupController extends BaseController {
   final formKey = GlobalKey<FormState>();
 
   String? password;
   List errors = [].obs;
   var isObscureText = true.obs;
-  RxBool? remember = false.obs;
+  String? email;
+
   String? name;
   Token? token;
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   final ApiAuthProvider apiAuthProvider = ApiAuthProvider();
   final SharedPreferencesManager sharedPreferencesManager =
       SharedPreferencesManager();
@@ -35,16 +40,19 @@ class SignInController extends BaseController {
     }
   }
 
-  void changeRememberValue(bool value) => remember!.value = value;
-
-  void mapInputsLogin() {
-    Map map = {"username": name, "password": password};
-    loginUser(map);
+  void mapInputsRegister() {
+    Map map = {
+      "username": nameController.text.trim(),
+      "password": passwordController.text.trim(),
+      "email": emailController.text.trim(),
+    };
+    log("------------map: $map");
+    registerUser(map);
   }
 
-  void loginUser(Map map) async {
+  void registerUser(Map map) async {
     setState(ViewState.busy);
-    token = await apiAuthProvider.login(map);
+    token = await apiAuthProvider.register(map);
 
     if (token == null) {
       Fluttertoast.showToast(
@@ -54,17 +62,8 @@ class SignInController extends BaseController {
           backgroundColor: Colors.blue[300],
           textColor: Colors.white,
           fontSize: 16.0);
-      setState(ViewState.retrieved);
+      setState(ViewState.error);
     } else {
-      await sharedPreferencesManager.putString(
-          SharedPreferencesManager.keyAccessToken, token!.accessToken!);
-      log("access token ${token!.accessToken}");
-
-      await sharedPreferencesManager.putBool(
-          SharedPreferencesManager.keyIsLogin, true);
-
-      Get.offAllNamed(Routes.loginSplashScreen);
-
       setState(ViewState.retrieved);
     }
   }

@@ -20,6 +20,21 @@ class Product {
     required this.price,
     required this.description,
   });
+  factory Product.fromJson(Map<String, dynamic> json) => Product(
+      id: json["_id"],
+      images: json["img"],
+      colors: json["color"],
+      title: json["title"],
+      price: json["price"],
+      description: json["desc"]);
+  Map<String, dynamic> toJson() => {
+        "_id": id,
+        "img": images,
+        "color": colors,
+        "title": title,
+        "price": price,
+        "desc": description,
+      };
 }
 
 List<Product> demoProducts = [

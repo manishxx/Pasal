@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:pasal/models/api_products.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
-
-import '../../../models/products.dart';
 import '../../widgets/rounded_icon_button.dart';
 
 class ColorDots extends StatelessWidget {
   const ColorDots({Key? key, required this.product}) : super(key: key);
-  final Product product;
+  final Products product;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +17,9 @@ class ColorDots extends StatelessWidget {
       child: Row(
         children: [
           ...List.generate(
-              product.colors.length,
+              int.parse(product.color),
               (index) => ColorDot(
-                  color: product.colors[index],
+                  color: ColorManager.kPrimaryColor,
                   isSelected: index == selectedColor)),
           const Spacer(),
           RoundedIconBtn(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pasal/models/api_products.dart';
 
 import 'package:pasal/models/products.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
@@ -8,11 +9,12 @@ class ProductDescription extends StatelessWidget {
   const ProductDescription(
       {Key? key, required this.product, this.pressOnSeeMore})
       : super(key: key);
-  final Product product;
+  final Products product;
   final GestureTapCallback? pressOnSeeMore;
 
   @override
   Widget build(BuildContext context) {
+    bool isFavourite = true;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -20,7 +22,7 @@ class ProductDescription extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Text(
-            product.title,
+            product.title.toUpperCase(),
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
@@ -30,9 +32,8 @@ class ProductDescription extends StatelessWidget {
             padding: EdgeInsets.all(getProportionateScreenHeight(15)),
             width: getProportionateScreenWidth(64),
             decoration: BoxDecoration(
-              color: product.isFavourite
-                  ? const Color(0xffffe6e6)
-                  : const Color(0xfff5f6f9),
+              color:
+                  isFavourite ? const Color(0xffbbbb) : const Color(0xfff5f6f9),
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
@@ -46,7 +47,7 @@ class ProductDescription extends StatelessWidget {
             right: getProportionateScreenHeight(64),
           ),
           child: Text(
-            product.description,
+            product.desc,
             maxLines: 3,
           ),
         ),

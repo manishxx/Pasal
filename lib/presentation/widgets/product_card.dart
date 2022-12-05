@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pasal/models/api_products.dart';
 import 'package:pasal/models/products.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/routes_manager.dart';
@@ -16,7 +17,7 @@ class ProductCard extends StatelessWidget {
   }) : super(key: key);
 
   final double width, aspectRetio;
-  final Product product;
+  final Products product;
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +42,14 @@ class ProductCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 1.02,
                 child: Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-                  decoration: BoxDecoration(
-                    color: ColorManager.kSecondaryColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Hero(
-                    tag: product.id.toString(),
-                    child: Image.asset(product.images[0]),
-                  ),
-                ),
+                    padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+                    decoration: BoxDecoration(
+                      color: ColorManager.kSecondaryColor.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Hero(
+                        tag: product.id.toString(),
+                        child: Image.network(product.img))),
               ),
               const SizedBox(height: 10),
               Text(
@@ -69,27 +68,27 @@ class ProductCard extends StatelessWidget {
                       color: ColorManager.kPrimaryColor,
                     ),
                   ),
-                  InkWell(
-                    borderRadius: BorderRadius.circular(50),
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                      height: getProportionateScreenWidth(28),
-                      width: getProportionateScreenWidth(28),
-                      decoration: BoxDecoration(
-                        color: product.isFavourite
-                            ? ColorManager.kPrimaryColor.withOpacity(0.15)
-                            : ColorManager.kSecondaryColor.withOpacity(0.1),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/Heart Icon_2.svg",
-                        color: product.isFavourite
-                            ? const Color(0xFFFF4848)
-                            : const Color(0xFFDBDEE4),
-                      ),
-                    ),
-                  ),
+                  // InkWell(
+                  //   borderRadius: BorderRadius.circular(50),
+                  //   onTap: () {},
+                  //   child: Container(
+                  //     padding: EdgeInsets.all(getProportionateScreenWidth(8)),
+                  //     height: getProportionateScreenWidth(28),
+                  //     width: getProportionateScreenWidth(28),
+                  //     decoration: BoxDecoration(
+                  //       color: product.isFavourite
+                  //           ? ColorManager.kPrimaryColor.withOpacity(0.15)
+                  //           : ColorManager.kSecondaryColor.withOpacity(0.1),
+                  //       shape: BoxShape.circle,
+                  //     ),
+                  //     child: SvgPicture.asset(
+                  //       "assets/icons/Heart Icon_2.svg",
+                  //       color: product.isFavourite
+                  //           ? const Color(0xFFFF4848)
+                  //           : const Color(0xFFDBDEE4),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               )
             ],
