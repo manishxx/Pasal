@@ -3,6 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pasal/app/constants/app_constants.dart';
+import 'package:pasal/data/local/shared_preferences/shared_preference_manager.dart';
+import 'package:pasal/presentation/sign_in/sign_in_controller/sign_in_controller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../models/token.dart';
 
 class ApiAuthProvider {
@@ -20,6 +23,9 @@ class ApiAuthProvider {
         body: jsonEncode(map),
       );
       if (response.statusCode == 200) {
+        SharedPreferences preferences = await SharedPreferences.getInstance();
+        preferences.setBool("isLoggedIn", true);
+        log("stay logged in value = $preferences");
         log("logged in ${response.body}");
 
         return Token.fromJson(jsonDecode(response.body));

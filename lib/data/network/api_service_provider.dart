@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pasal/app/constants/app_constants.dart';
 import 'package:pasal/models/api_products.dart';
-import 'package:pasal/models/products.dart';
+import 'package:pasal/models/cart.dart';
 
 import '../local/shared_preferences/shared_preference_manager.dart';
 
@@ -36,6 +36,83 @@ class ApiServiceProvider {
       _printError(e, stacktrace);
     }
     log('Failed to get products.');
+    return null;
+  }
+
+  Future<bool> addToCart(Map map) async {
+    log("map $map");
+    try {
+      accesstoken = sharedPreferencesManager.getAccessToken()!;
+
+      final response = await http.post(
+        Uri.parse('${baseUrl}cart'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'token': 'Bearer $accesstoken'
+        },
+        body: jsonEncode(map),
+      );
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        log('Failed to add to Cart.');
+        return false;
+      }
+    } catch (e, stacktrace) {
+      _printError(e, stacktrace);
+    }
+    log('Failed to add to CART.');
+    return false;
+  }
+
+  Future<Cart?> getCart() async {
+    try {
+      accesstoken = sharedPreferencesManager.getAccessToken()!;
+
+      final response = await http.get(
+        Uri.parse('${baseUrl}cart/find/'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'token': 'Bearer $accesstoken'
+        },
+      );
+      if (response.statusCode == 200) {
+        return Cart.fromJson(jsonDecode(response.body));
+      } else {
+        log('Failed to add to Cart.');
+        return null;
+      }
+    } catch (e, stacktrace) {
+      _printError(e, stacktrace);
+    }
+    log('Failed to add to CART.');
+    return null;
+  }
+
+  Future<Cart?> removeCart(String id) async {
+    try {
+      print(
+        Uri.http('${baseUrl}cart?itemId=${id}'),
+      );
+      accesstoken = sharedPreferencesManager.getAccessToken()!;
+
+      final response = await http.delete(
+        Uri.http('${baseUrl}cart?itemId=${id}'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'token': 'Bearer $accesstoken',
+        },
+      );
+      if (response.statusCode == 200) {
+        log('Deletion Success');
+      } else {
+        log('Failed to delete from Cart.');
+        return null;
+      }
+    } catch (e, stacktrace) {
+      _printError(e, stacktrace);
+    }
+    log('Failed to add to CART.');
     return null;
   }
 }

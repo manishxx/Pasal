@@ -6,7 +6,7 @@ import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/routes_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 
-import '../details/components/details_screen.dart';
+import '../cart/details/components/details_screen.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({

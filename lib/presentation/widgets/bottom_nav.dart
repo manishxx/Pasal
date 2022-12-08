@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:pasal/presentation/home_screen/home_screen.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 
-import '../../profile_page/profile_screen.dart';
+import '../profile_page/profile_screen.dart';
 import '../resources/routes_manager.dart';
 
 class BottomNav extends StatelessWidget {
@@ -48,7 +48,7 @@ class BottomNav extends StatelessWidget {
                 size: iconSize,
               ),
               onPressed: () {
-                Get.offAllNamed(Routes.cartRoute);
+                Navigator.pushNamed(context, Routes.cartRoute);
               },
             ),
             IconButton(

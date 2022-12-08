@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
-import 'package:pasal/models/democart.dart';
+import 'package:get/get.dart';
+import 'package:pasal/presentation/cart/cart_controller.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 
 import 'cart_card.dart';
@@ -14,20 +15,25 @@ class CartBody extends StatefulWidget {
 }
 
 class _CartBodyState extends State<CartBody> {
+  final CartController cartController = Get.put(CartController());
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-      child: ListView.builder(
-          itemCount: demoCarts.length,
+      child: Obx(() => ListView.builder(
+          itemCount: cartController.cartResponse[0].items.length,
           itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Dismissible(
-                  key: Key(demoCarts[index].product.id.toString()),
+                  key: Key(cartController.cartResponse[0].items[index].id
+                      .toString()),
                   onDismissed: (direction) => {
                     setState(() {
-                      demoCarts.removeAt(index);
+                      cartController.deleteCart(
+                          cartController.cartResponse[0].items[index].id);
+                      cartController.cartResponse[0].items.removeAt(index);
                     }),
                   },
                   background: Container(
@@ -43,9 +49,10 @@ class _CartBodyState extends State<CartBody> {
                       ],
                     ),
                   ),
-                  child: CartCard(cart: demoCarts[index]),
+                  child: CartCard(
+                      item: cartController.cartResponse[0].items[index]),
                 ),
-              )),
+              ))),
     );
   }
 }

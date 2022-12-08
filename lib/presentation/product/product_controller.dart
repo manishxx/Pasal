@@ -6,7 +6,7 @@ import 'package:pasal/data/network/api_service_provider.dart';
 import 'package:pasal/models/api_products.dart';
 import 'package:pasal/models/products.dart';
 
-import '../presentation/base_model/base_model.dart';
+import '../base_model/base_model.dart';
 
 class ProductListController extends BaseController {
   final ApiServiceProvider _apiServiceProvider = ApiServiceProvider();
@@ -15,6 +15,7 @@ class ProductListController extends BaseController {
   var productAvailable = false.obs;
   List productResponse = [].obs;
   bool tokenNeeded = false;
+  var productId = [].obs;
   @override
   void onInit() {
     super.onInit();

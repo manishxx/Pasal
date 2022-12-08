@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pasal/models/products.dart';
 import 'package:pasal/presentation/widgets/product_card.dart';
-import 'package:pasal/product/product_controller.dart';
+import 'package:pasal/presentation/product/product_controller.dart';
 
 import '../resources/size_config.dart';
 
@@ -32,18 +32,22 @@ class PopularProducts extends StatelessWidget {
           ),
         ),
         SingleChildScrollView(
-            child: SizedBox(
-                height: getProportionateScreenHeight(300),
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: controller.productResponse.length,
-                    itemBuilder: (context, index) {
-                      if (demoProducts[index].isPopular) {
-                        return ProductCard(
-                            product: controller.productResponse[index]);
-                      }
-                      return const SizedBox.shrink();
-                    })))
+          child: SizedBox(
+            height: getProportionateScreenHeight(300),
+            child: Obx(
+              () => (ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: controller.productResponse.length,
+                  itemBuilder: (context, index) {
+                    if (demoProducts[index].isPopular) {
+                      return ProductCard(
+                          product: controller.productResponse[index]);
+                    }
+                    return const SizedBox.shrink();
+                  })),
+            ),
+          ),
+        ),
       ],
     );
   }

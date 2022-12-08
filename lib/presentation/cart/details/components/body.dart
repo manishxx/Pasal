@@ -1,17 +1,21 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:pasal/models/products.dart';
+import 'package:get/get.dart';
+import 'package:pasal/presentation/cart/cart_controller.dart';
+
 import 'package:pasal/presentation/resources/size_config.dart';
 import 'package:pasal/presentation/widgets/default_button.dart';
-import '../../../models/api_products.dart';
-import 'color_dots.dart';
+
+import '../../../../models/api_products.dart';
 import 'product_description.dart';
 import 'top_rounded_container.dart';
 import 'product_images.dart';
 
 class Body extends StatelessWidget {
   final Products product;
-
-  const Body({Key? key, required this.product}) : super(key: key);
+  final CartController cartController = Get.put(CartController());
+  Body({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +46,11 @@ class Body extends StatelessWidget {
                         ),
                         child: DefaultButton(
                           text: "Add To Cart",
-                          press: () {},
+                          press: () {
+                            log("product id ${product.id}");
+                            Map map = {"itemId": product.id, "quantity": 1};
+                            cartController.addToCart(map);
+                          },
                         ),
                       ),
                     ),

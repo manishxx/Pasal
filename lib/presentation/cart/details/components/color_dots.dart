@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pasal/models/api_products.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
-import '../../widgets/rounded_icon_button.dart';
+import '../../../widgets/rounded_icon_button.dart';
 
 class ColorDots extends StatelessWidget {
   const ColorDots({Key? key, required this.product}) : super(key: key);

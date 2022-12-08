@@ -68,4 +68,5 @@ class AppStrings {
   static const String searchBarHintText = "Search products";
   static const String seeMoreText = "See More";
   static const String specialForYou = "Special for you";
+  static const String yourCart = "Your Cart";
 }

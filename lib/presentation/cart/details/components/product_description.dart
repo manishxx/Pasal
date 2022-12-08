@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pasal/models/api_products.dart';
 
-import 'package:pasal/models/products.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 

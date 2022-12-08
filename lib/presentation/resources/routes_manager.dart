@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pasal/models/products.dart';
+import 'package:pasal/presentation/cart/cart_screen.dart';
 import 'package:pasal/presentation/cart/components/body.dart';
-import 'package:pasal/presentation/details/components/body.dart';
+import 'package:pasal/presentation/cart/details/components/body.dart';
 import 'package:pasal/presentation/home_screen/home_screen.dart';
 import 'package:pasal/presentation/intro_screen/intro_screen.dart';
 import 'package:pasal/presentation/resources/strings_manager.dart';
@@ -9,7 +10,7 @@ import 'package:pasal/presentation/sign_up/components/sign_up_screen.dart';
 import 'package:pasal/presentation/widgets/login_splash.dart';
 import 'package:pasal/presentation/widgets/product_card.dart';
 
-import '../details/components/details_screen.dart';
+import '../cart/details/components/details_screen.dart';
 import '../sign_in/components/sign_in_screen.dart';
 import '../sign_up/components/complete_profile/complete_profile_screen.dart';
 
@@ -45,7 +46,7 @@ class Routegenerator {
       case Routes.loginSplashScreen:
         return MaterialPageRoute(builder: (_) => const LoginSplash());
       case Routes.cartRoute:
-        return MaterialPageRoute(builder: (_) => const CartBody());
+        return MaterialPageRoute(builder: (_) => CartScreen());
 
       default:
         return unDefinedRoute();

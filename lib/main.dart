@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Pasal',
       theme: theme(),
       onGenerateRoute: Routegenerator.getRoute,
-      initialRoute: Routes.initialScreenRoute,
+      initialRoute: Routes.signInRoute,
     );
   }
 }

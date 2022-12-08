@@ -5,7 +5,7 @@ import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/duration_constants.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 
-import '../../../models/products.dart';
+import '../../../../models/products.dart';
 
 class ProductImages extends StatefulWidget {
   const ProductImages({Key? key, required this.product}) : super(key: key);

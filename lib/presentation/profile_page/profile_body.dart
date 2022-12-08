@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pasal/presentation/resources/assets_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
-import 'package:pasal/profile_page/profile_menu.dart';
+import 'package:pasal/presentation/profile_page/profile_menu.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
@@ -10,6 +10,9 @@ class ProfileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        FloatingActionButton(onPressed: () {
+          Navigator.pop(context);
+        }),
         const CircleAvatar(
             radius: 80,
             backgroundImage: AssetImage(
