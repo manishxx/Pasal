@@ -23,10 +23,8 @@ class ApiAuthProvider {
         body: jsonEncode(map),
       );
       if (response.statusCode == 200) {
-        SharedPreferences preferences = await SharedPreferences.getInstance();
-        preferences.setBool("isLoggedIn", true);
-        log("stay logged in value = $preferences");
-        log("logged in ${response.body}");
+        SharedPreferences login = await SharedPreferences.getInstance();
+        login.setBool("isLoggedIn", true);
 
         return Token.fromJson(jsonDecode(response.body));
       } else {

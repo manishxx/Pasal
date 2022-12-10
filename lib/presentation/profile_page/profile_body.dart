@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+
 import 'package:pasal/presentation/resources/assets_manager.dart';
+import 'package:pasal/presentation/resources/routes_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 import 'package:pasal/presentation/profile_page/profile_menu.dart';
 
@@ -10,9 +14,6 @@ class ProfileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FloatingActionButton(onPressed: () {
-          Navigator.pop(context);
-        }),
         const CircleAvatar(
             radius: 80,
             backgroundImage: AssetImage(
@@ -44,7 +45,9 @@ class ProfileBody extends StatelessWidget {
         ProfileMenu(
           text: "Log Out",
           icon: "assets/icons/Log out.svg",
-          press: () {},
+          press: () {
+            Navigator.popAndPushNamed(context, Routes.signInRoute);
+          },
         ),
       ],
     );

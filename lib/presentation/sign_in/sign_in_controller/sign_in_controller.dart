@@ -17,7 +17,7 @@ class SignInController extends BaseController {
   String? password;
   List errors = [].obs;
   var isObscureText = true.obs;
-  RxBool? remember = false.obs;
+  var remember = false.obs;
   String? name;
   Token? token;
   final ApiAuthProvider apiAuthProvider = ApiAuthProvider();
@@ -35,7 +35,7 @@ class SignInController extends BaseController {
     }
   }
 
-  void changeRememberValue(bool value) => remember!.value = value;
+  void changeRememberValue(bool value) => remember.value = value;
 
   void mapInputsLogin() {
     Map map = {"username": name, "password": password};

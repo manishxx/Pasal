@@ -5,6 +5,7 @@ import 'package:pasal/presentation/cart/components/body.dart';
 import 'package:pasal/presentation/cart/details/components/body.dart';
 import 'package:pasal/presentation/home_screen/home_screen.dart';
 import 'package:pasal/presentation/intro_screen/intro_screen.dart';
+import 'package:pasal/presentation/profile_page/profile_screen.dart';
 import 'package:pasal/presentation/resources/strings_manager.dart';
 import 'package:pasal/presentation/sign_up/components/sign_up_screen.dart';
 import 'package:pasal/presentation/widgets/login_splash.dart';
@@ -22,6 +23,7 @@ class Routes {
   static const String productDetailsRoute = "/product-card";
   static const String loginSplashScreen = "/splash-screen";
   static const String cartRoute = "/cart";
+  static const String profileScreenRoute = "/profile";
 
   static const String completeProfileRoute = "/complete_profile";
 }
@@ -46,7 +48,9 @@ class Routegenerator {
       case Routes.loginSplashScreen:
         return MaterialPageRoute(builder: (_) => const LoginSplash());
       case Routes.cartRoute:
-        return MaterialPageRoute(builder: (_) => CartScreen());
+        return MaterialPageRoute(builder: (_) => const CartScreen());
+      case Routes.profileScreenRoute:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
 
       default:
         return unDefinedRoute();

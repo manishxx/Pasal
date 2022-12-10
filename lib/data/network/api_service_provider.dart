@@ -91,13 +91,10 @@ class ApiServiceProvider {
 
   Future<Cart?> removeCart(String id) async {
     try {
-      print(
-        Uri.http('${baseUrl}cart?itemId=${id}'),
-      );
       accesstoken = sharedPreferencesManager.getAccessToken()!;
-
+      log("token $accesstoken");
       final response = await http.delete(
-        Uri.http('${baseUrl}cart?itemId=${id}'),
+        Uri.parse('${baseUrl}cart?itemId=$id'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'token': 'Bearer $accesstoken',
@@ -106,13 +103,12 @@ class ApiServiceProvider {
       if (response.statusCode == 200) {
         log('Deletion Success');
       } else {
-        log('Failed to delete from Cart.');
+        log('Failed to delete from Carttttttt.');
         return null;
       }
     } catch (e, stacktrace) {
       _printError(e, stacktrace);
     }
-    log('Failed to add to CART.');
     return null;
   }
 }

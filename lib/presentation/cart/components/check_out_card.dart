@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:pasal/app/constants/enums.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 import 'package:pasal/presentation/widgets/default_button.dart';
@@ -8,13 +9,14 @@ import 'package:pasal/presentation/widgets/default_button.dart';
 import '../cart_controller.dart';
 
 class CheckoutCard extends StatelessWidget {
+  final CartController cartController;
   const CheckoutCard({
     Key? key,
+    required this.cartController,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final CartController cartController = Get.put(CartController());
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: getProportionateScreenWidth(15),
@@ -66,16 +68,22 @@ class CheckoutCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(
-                  TextSpan(
-                    text: "Total:\n",
-                    children: [
-                      TextSpan(
-                        text: "${cartController.cartResponse[0].bill}\$",
-                        style:
-                            const TextStyle(fontSize: 16, color: Colors.black),
-                      ),
-                    ],
+                Obx(
+                  () => Text.rich(
+                    TextSpan(
+                      text: "Total:\n",
+                      children: [
+                        cartController.state == ViewState.busy
+                            ? const TextSpan(text: "loading..")
+                            : TextSpan(
+                                text: cartController.cartResponse![0] == null
+                                    ? "0"
+                                    : "${cartController.cartResponse![0].bill}\$",
+                                style: const TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(

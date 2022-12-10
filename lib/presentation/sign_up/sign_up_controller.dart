@@ -9,7 +9,6 @@ import '../../app/constants/enums.dart';
 import '../../data/local/shared_preferences/shared_preference_manager.dart';
 import '../../data/network/api_auth_provider.dart';
 import '../../models/token.dart';
-import '../resources/routes_manager.dart';
 
 class SignupController extends BaseController {
   final formKey = GlobalKey<FormState>();

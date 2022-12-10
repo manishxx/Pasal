@@ -58,11 +58,7 @@ class BottomNav extends StatelessWidget {
                 size: iconSize,
               ),
               onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => const ProfileScreen(),
-                  ),
-                );
+                Navigator.pushNamed(context, Routes.profileScreenRoute);
               },
             ),
           ],
