@@ -1,18 +1,15 @@
 # pasal
 
-A new Flutter project.
+Pasal is an ecommerce application built with Flutter that allows users to browse and purchase products from various sellers. It utilizes custom API request handling and authorization to ensure secure transactions and data protection.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Browse and search for products from multiple sellers
+- Add products to cart and proceed to checkout
+- Secure payment processing using custom API authorization
+- View purchase history and track orders
+- Leave ratings for products
 
-A few resources to get you started if this is your first Flutter project:
+# Built with
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# flutter-ecom-project
-# new-ecom
+- Flutter
