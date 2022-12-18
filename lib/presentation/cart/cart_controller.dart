@@ -9,10 +9,10 @@ import '../base_model/base_model.dart';
 class CartController extends BaseController {
   final ApiServiceProvider _apiServiceProvider = ApiServiceProvider();
 
-  final count = 0.obs;
+  var count = 0.obs;
   var productAvailable = false.obs;
   List? cartResponse = [].obs;
-  var productId = [].obs;
+
   // dynamic cart = Cart().obs;
 
   @override
@@ -52,5 +52,13 @@ class CartController extends BaseController {
     var value = await _apiServiceProvider.removeCart(id);
     log(value.toString());
     setState(ViewState.retrieved);
+  }
+
+  void increment() {
+    count++;
+  }
+
+  void decrement() {
+    count--;
   }
 }

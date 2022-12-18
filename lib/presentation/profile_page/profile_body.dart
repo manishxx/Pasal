@@ -1,14 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import 'package:pasal/data/local/shared_preferences/shared_preference_manager.dart';
+
 import 'package:pasal/presentation/resources/assets_manager.dart';
-import 'package:pasal/presentation/resources/routes_manager.dart';
+
 import 'package:pasal/presentation/resources/size_config.dart';
 import 'package:pasal/presentation/profile_page/profile_menu.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../resources/routes_manager.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({super.key});
+  ProfileBody({super.key});
+  final SharedPreferencesManager _sharedPreferencesManager =
+      SharedPreferencesManager();
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +53,9 @@ class ProfileBody extends StatelessWidget {
         ProfileMenu(
           text: "Log Out",
           icon: "assets/icons/Log out.svg",
-          press: () {
-            Navigator.popAndPushNamed(context, Routes.signInRoute);
+          press: () async {
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil(Routes.signInRoute, (route) => false);
           },
         ),
       ],

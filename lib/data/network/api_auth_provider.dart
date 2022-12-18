@@ -23,9 +23,6 @@ class ApiAuthProvider {
         body: jsonEncode(map),
       );
       if (response.statusCode == 200) {
-        SharedPreferences login = await SharedPreferences.getInstance();
-        login.setBool("isLoggedIn", true);
-
         return Token.fromJson(jsonDecode(response.body));
       } else {
         throw Exception('Failed to login');

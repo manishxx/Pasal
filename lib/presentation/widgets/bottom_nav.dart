@@ -35,11 +35,13 @@ class BottomNav extends StatelessWidget {
             ),
             IconButton(
               icon: Icon(
-                Icons.favorite_rounded,
+                Icons.fire_truck,
                 color: Colors.white,
                 size: iconSize,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.orderRoute);
+              },
             ),
             IconButton(
               icon: Icon(

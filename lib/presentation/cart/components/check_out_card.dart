@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:pasal/app/constants/enums.dart';
+import 'package:pasal/orders/order_controller.dart';
+import 'package:pasal/presentation/esewa/esewa_page.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 import 'package:pasal/presentation/widgets/default_button.dart';
 
+import '../../resources/routes_manager.dart';
 import '../cart_controller.dart';
 
 class CheckoutCard extends StatelessWidget {
   final CartController cartController;
-  const CheckoutCard({
+
+  CheckoutCard({
     Key? key,
     required this.cartController,
   }) : super(key: key);
-
+  final orderController = Get.put(OrderController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -90,7 +95,9 @@ class CheckoutCard extends StatelessWidget {
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
                     text: "Check Out",
-                    press: () {},
+                    press: () {
+                      Get.to(() => const EsewaEpay());
+                    },
                   ),
                 ),
               ],
@@ -100,4 +107,14 @@ class CheckoutCard extends StatelessWidget {
       ),
     );
   }
+
+  // void placeAllOrders() {
+  //   for (int i = 0; i < cartController.cartResponse!.length; i++) {
+  //     Map map = {
+  //       "productId": cartController.cartResponse![0].items[i].itemId,
+  //       "quantity": cartController.cartResponse![0].items[i].quantity
+  //     };
+  //     orderController.orderProduct(map);
+  //   }
+  // }
 }

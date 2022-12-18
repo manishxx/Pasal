@@ -25,7 +25,7 @@ class _CartBodyState extends State<CartBody> {
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Obx(() {
         return widget.cartController.state == ViewState.busy
-            ? const CircularProgressIndicator()
+            ? const Center(child: CircularProgressIndicator())
             : widget.cartController.cartResponse == null
                 ? const Text("")
                 : ListView.builder(

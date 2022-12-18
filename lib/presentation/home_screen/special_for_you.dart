@@ -9,8 +9,7 @@ class SpecialForYou extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Column(
+    return Column(
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -30,95 +29,98 @@ class SpecialForYou extends StatelessWidget {
             ],
           ),
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Container(
-                height: getProportionateScreenHeight(150),
-                width: getProportionateScreenWidth(300),
-                decoration: BoxDecoration(
-                    color: ColorManager.bgWhite,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      top: getProportionateScreenHeight(1),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: Image.asset(
-                          ImageAssets.imageBanner2,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20,
-                      top: 20,
-                      child: Column(
-                        children: const [
-                          Text(
-                            'Smartphone',
-                            style: TextStyle(
-                              fontFamily: 'Muli',
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                            ),
+        Padding(
+          padding: const EdgeInsets.only(left: 13),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Container(
+                  height: getProportionateScreenHeight(150),
+                  width: getProportionateScreenWidth(300),
+                  decoration: BoxDecoration(
+                      color: ColorManager.bgWhite,
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        top: getProportionateScreenHeight(1),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            ImageAssets.imageBanner2,
+                            fit: BoxFit.cover,
                           ),
-                          Text(
-                            '18 Brands',
-                            style: TextStyle(
-                              fontFamily: 'Muli',
-                              color: Colors.white,
-                              fontSize: 15,
+                        ),
+                      ),
+                      Positioned(
+                        left: 20,
+                        top: 20,
+                        child: Column(
+                          children: const [
+                            Text(
+                              'Smartphone',
+                              style: TextStyle(
+                                fontFamily: 'Muli',
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            Text(
+                              '18 Brands',
+                              style: TextStyle(
+                                fontFamily: 'Muli',
+                                color: Colors.white,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Container(
+                  height: getProportionateScreenHeight(150),
+                  width: getProportionateScreenWidth(300),
+                  decoration: BoxDecoration(
+                      color: ColorManager.bgWhite,
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            ImageAssets.imageBanner3,
+                            fit: BoxFit.cover,
                           ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Container(
-                height: getProportionateScreenHeight(150),
-                width: getProportionateScreenWidth(300),
-                decoration: BoxDecoration(
-                    color: ColorManager.bgWhite,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: Image.asset(
-                          ImageAssets.imageBanner3,
-                          fit: BoxFit.cover,
                         ),
                       ),
-                    ),
-                    const Positioned(
-                      left: 120,
-                      bottom: 20,
-                      child: Text(
-                        'Smartphone',
-                        style: TextStyle(
-                          fontFamily: 'Muli',
-                          color: Colors.white,
-                          fontSize: 30,
+                      const Positioned(
+                        left: 120,
+                        bottom: 20,
+                        child: Text(
+                          'Smartphone',
+                          style: TextStyle(
+                            fontFamily: 'Muli',
+                            color: Colors.white,
+                            fontSize: 30,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         )
       ],
-    ));
+    );
   }
 }

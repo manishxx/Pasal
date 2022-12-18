@@ -43,6 +43,9 @@ dependencies:
   confetti: ^0.7.0
   dio: ^4.0.6
   string_to_color: ^1.0.2
+  webview_flutter: ^3.0.4
+  firebase_core: ^2.4.0
+  firebase_messaging: ^14.1.4
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +72,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/html/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
