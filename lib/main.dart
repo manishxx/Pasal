@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +9,15 @@ import 'package:pasal/presentation/resources/routes_manager.dart';
 import 'package:pasal/presentation/resources/theme.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SharedPreferencesManager.getInstance();
   await Firebase.initializeApp();
+  await SharedPreferencesManager.getInstance();
   FirebaseMessaging.instance.getToken().then(
         (value) => log("getToken: $value"),
       );
+
   //if application is in background, then it will work
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) async {
     log("onMessageOpenedApp: $message");

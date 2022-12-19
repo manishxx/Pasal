@@ -44,8 +44,8 @@ dependencies:
   dio: ^4.0.6
   string_to_color: ^1.0.2
   webview_flutter: ^3.0.4
-  firebase_core:
-  firebase_messaging:
+  firebase_messaging: ^14.1.4
+  firebase_core: ^2.4.0
 
 dev_dependencies:
   flutter_test:
