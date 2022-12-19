@@ -32,7 +32,7 @@ class BannerScreen extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Muli',
                     color: Colors.white,
-                    fontSize: 38,
+                    fontSize: 35,
                   )),
             ],
           ),

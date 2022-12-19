@@ -32,16 +32,24 @@ class _HomeNavbarState extends State<HomeNavbar> {
                 ),
               ),
             ),
-            IconButton(
-                onPressed: () {},
-                icon: const HomeFeatureIcon(
-                  svgIcon: ImageAssets.shopIcon,
-                )),
-            IconButton(
-                onPressed: () {},
-                icon: const HomeFeatureIcon(
-                  svgIcon: ImageAssets.bellIcon,
-                )),
+            SizedBox(
+              height: getProportionateScreenHeight(10),
+              width: getProportionateScreenWidth(10),
+              child: IconButton(
+                  onPressed: () {},
+                  icon: const HomeFeatureIcon(
+                    svgIcon: ImageAssets.shopIcon,
+                  )),
+            ),
+            SizedBox(
+              height: getProportionateScreenHeight(10),
+              width: getProportionateScreenWidth(10),
+              child: IconButton(
+                  onPressed: () {},
+                  icon: const HomeFeatureIcon(
+                    svgIcon: ImageAssets.bellIcon,
+                  )),
+            ),
           ],
         ));
   }

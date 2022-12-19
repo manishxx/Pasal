@@ -9,7 +9,6 @@ import '../resources/size_config.dart';
 class PopularProducts extends StatelessWidget {
   PopularProducts({super.key});
 
-  @override
   final ProductListController controller = Get.put(ProductListController());
   @override
   Widget build(BuildContext context) {

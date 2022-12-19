@@ -52,12 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
       body: SingleChildScrollView(
         child: Column(children: [
-          BannerScreen(),
-          SizedBox(
+          const BannerScreen(),
+          const SizedBox(
             height: 12,
           ),
-          HomeFeatures(),
-          SpecialForYou(),
+          const HomeFeatures(),
+          const SpecialForYou(),
           PopularProducts(),
         ]),
       ),

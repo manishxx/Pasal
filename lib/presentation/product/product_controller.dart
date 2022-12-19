@@ -29,7 +29,6 @@ class ProductListController extends BaseController {
     List<Products>? products = await _apiServiceProvider.getProduct();
 
     productResponse.assignAll(products!);
-    print(productResponse);
     productAvailable.value = products != null;
     setState(ViewState.retrieved);
   }

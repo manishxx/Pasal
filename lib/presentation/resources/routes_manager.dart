@@ -7,7 +7,7 @@ import 'package:pasal/presentation/profile_page/profile_screen.dart';
 import 'package:pasal/presentation/resources/strings_manager.dart';
 import 'package:pasal/presentation/sign_up/components/sign_up_screen.dart';
 import 'package:pasal/presentation/widgets/login_splash.dart';
-import '../product/details/components/details_screen.dart';
+
 import '../sign_in/components/sign_in_screen.dart';
 import '../sign_up/components/complete_profile/complete_profile_screen.dart';
 

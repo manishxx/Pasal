@@ -32,7 +32,7 @@ class SignInForm extends StatelessWidget {
             children: [
               Obx(
                 () => Checkbox(
-                  value: _signInController.remember!.value,
+                  value: _signInController.remember.value,
                   activeColor: ColorManager.kPrimaryColor,
                   onChanged: (value) {
                     _signInController.changeRememberValue(value!);

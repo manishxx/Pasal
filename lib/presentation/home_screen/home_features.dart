@@ -13,43 +13,41 @@ class HomeFeatures extends StatefulWidget {
 class _HomeFeaturesState extends State<HomeFeatures> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: const [
-            SizedBox(width: 10),
-            HomeFeaturesWidget(
-              cardTitle: 'Flash Deal',
-              cardIcon: ImageAssets.flashIcon,
-            ),
-            SizedBox(width: 10),
-            HomeFeaturesWidget(
-              cardTitle: 'Bill',
-              cardIcon: ImageAssets.billIcon,
-            ),
-            SizedBox(width: 10),
-            HomeFeaturesWidget(
-              cardTitle: 'Game',
-              cardIcon: ImageAssets.gameIcon,
-            ),
-            SizedBox(width: 10),
-            HomeFeaturesWidget(
-              cardTitle: 'Daily Gifts',
-              cardIcon: ImageAssets.giftIcon,
-            ),
-            SizedBox(width: 10),
-            HomeFeaturesWidget(
-              cardTitle: 'More',
-              cardIcon: ImageAssets.discoverIcon,
-            ),
-            SizedBox(width: 10),
-            HomeFeaturesWidget(
-              cardTitle: 'Bill',
-              cardIcon: ImageAssets.billIcon,
-            ),
-          ],
-        ),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: const [
+          SizedBox(width: 10),
+          HomeFeaturesWidget(
+            cardTitle: 'Flash Deal',
+            cardIcon: ImageAssets.flashIcon,
+          ),
+          SizedBox(width: 10),
+          HomeFeaturesWidget(
+            cardTitle: 'Bill',
+            cardIcon: ImageAssets.billIcon,
+          ),
+          SizedBox(width: 10),
+          HomeFeaturesWidget(
+            cardTitle: 'Game',
+            cardIcon: ImageAssets.gameIcon,
+          ),
+          SizedBox(width: 10),
+          HomeFeaturesWidget(
+            cardTitle: 'Daily Gifts',
+            cardIcon: ImageAssets.giftIcon,
+          ),
+          SizedBox(width: 10),
+          HomeFeaturesWidget(
+            cardTitle: 'More',
+            cardIcon: ImageAssets.discoverIcon,
+          ),
+          SizedBox(width: 10),
+          HomeFeaturesWidget(
+            cardTitle: 'Bill',
+            cardIcon: ImageAssets.billIcon,
+          ),
+        ],
       ),
     );
   }

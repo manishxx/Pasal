@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:pasal/app/constants/enums.dart';
 import 'package:pasal/data/network/api_service_provider.dart';
-import 'package:pasal/models/orders.dart';
 
 import '../presentation/base_model/base_model.dart';
 

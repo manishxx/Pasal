@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:pasal/presentation/home_screen/home_screen.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 
-import '../profile_page/profile_screen.dart';
 import '../resources/routes_manager.dart';
 
 class BottomNav extends StatelessWidget {

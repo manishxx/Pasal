@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pasal/models/cart.dart';
 import 'package:pasal/models/orders.dart';
 
 import 'package:pasal/presentation/resources/color_manager.dart';
@@ -23,7 +22,7 @@ class OrderCard extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(getProportionateScreenWidth(10)),
               decoration: BoxDecoration(
-                color: const Color(0xFFF6F9),
+                color: const Color(0x00fff6f9),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Image.network(

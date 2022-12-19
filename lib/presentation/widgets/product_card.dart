@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pasal/models/api_products.dart';
-import 'package:pasal/models/products.dart';
+
 import 'package:pasal/presentation/resources/color_manager.dart';
-import 'package:pasal/presentation/resources/routes_manager.dart';
+
 import 'package:pasal/presentation/resources/size_config.dart';
 
 import '../product/details/components/details_screen.dart';

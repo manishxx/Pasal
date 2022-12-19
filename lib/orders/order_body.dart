@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 import 'package:pasal/models/orders.dart';
@@ -23,7 +21,7 @@ class OrderBody extends StatelessWidget {
           subtitle: Text(orderController!
               .orderResponse![0].orders[index].quantity
               .toString()),
-          leading: Icon(Icons.fire_truck_rounded),
+          leading: const Icon(Icons.fire_truck_rounded),
         );
       },
     );

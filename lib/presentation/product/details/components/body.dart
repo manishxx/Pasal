@@ -32,7 +32,7 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   final CartController cartController = Get.put(CartController());
-  final ProductCounter productCounter = Get.put(ProductCounter());
+  final ProductCounter productCounter = Get.put(const ProductCounter());
 
   final OrderController orderController = Get.put(OrderController());
 

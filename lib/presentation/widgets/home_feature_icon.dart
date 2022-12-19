@@ -10,7 +10,7 @@ class HomeFeatureIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       svgIcon,
-      height: getProportionateScreenWidth(18),
+      height: getProportionateScreenWidth(15),
     );
     // );
   }

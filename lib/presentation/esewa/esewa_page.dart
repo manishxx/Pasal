@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart';
 import 'package:pasal/orders/order_controller.dart';
 import 'package:pasal/presentation/cart/cart_controller.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -73,7 +72,7 @@ class TestPageState extends State<EsewaEpay> {
         onPageFinished: (data) {
           setState(() {
             String pid = UniqueKey().toString();
-            _webViewController.evaluateJavascript(
+            _webViewController.runJavascript(
                 'requestPayment(tAmt = $tAmt, amt = $amt, txAmt = $txAmt, psc = $psc, pdc = $pdc, scd = "$scd", pid = "$pid", su = "$su", fu = "$fu")');
           });
         },

@@ -5,7 +5,6 @@ import 'package:pasal/presentation/cart/cart_controller.dart';
 
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
-import 'package:pasal/presentation/widgets/product_counter.dart';
 
 class ProductDescription extends StatefulWidget {
   const ProductDescription(
@@ -23,7 +22,6 @@ class _ProductDescriptionState extends State<ProductDescription> {
   Widget build(BuildContext context) {
     final CartController cartController = Get.put(CartController());
 
-    bool isFavourite = true;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -43,8 +41,8 @@ class _ProductDescriptionState extends State<ProductDescription> {
                   children: <Widget>[
                     Obx(
                       () => Text(
-                        "Quantity:" + cartController.count.toString(),
-                        style: TextStyle(fontSize: 15),
+                        "Quantity:${cartController.count}",
+                        style: const TextStyle(fontSize: 15),
                       ),
                     ),
                     const SizedBox(height: 5),
@@ -58,7 +56,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: ColorManager.kPrimaryColor),
                             onPressed: cartController.decrement,
-                            child: Center(child: Icon(Icons.remove)),
+                            child: const Center(child: Icon(Icons.remove)),
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -85,10 +83,9 @@ class _ProductDescriptionState extends State<ProductDescription> {
           child: Container(
             padding: EdgeInsets.all(getProportionateScreenHeight(15)),
             width: getProportionateScreenWidth(64),
-            decoration: BoxDecoration(
-              color:
-                  isFavourite ? const Color(0xffbbbb) : const Color(0xfff5f6f9),
-              borderRadius: const BorderRadius.only(
+            decoration: const BoxDecoration(
+              color: Color(0x00ffbbbb),
+              borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
               ),

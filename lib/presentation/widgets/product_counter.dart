@@ -3,7 +3,7 @@ import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 
 class ProductCounter extends StatefulWidget {
-  ProductCounter({super.key});
+  const ProductCounter({super.key});
 
   @override
   ProductCounterState createState() => ProductCounterState();
