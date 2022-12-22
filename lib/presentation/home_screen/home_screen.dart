@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pasal/presentation/home_screen/home_features.dart';
 import 'package:pasal/presentation/home_screen/popular_products.dart';
 import 'package:pasal/presentation/home_screen/special_for_you.dart';
@@ -14,7 +15,7 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> get createState => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -22,14 +23,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.white38,
-          title: Row(
+        automaticallyImplyLeading: true,
+        backgroundColor: Colors.white38,
+        title: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
                 height: getProportionateScreenHeight(40),
-                width: getProportionateScreenWidth(250),
+                width: getProportionateScreenWidth(220),
                 child: TextField(
                   onChanged: (value) {},
                   decoration: const InputDecoration(
@@ -40,16 +43,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               IconButton(
                   onPressed: () {},
-                  icon: const HomeFeatureIcon(
-                    svgIcon: ImageAssets.shopIcon,
+                  icon: SvgPicture.asset(
+                    ImageAssets.shopIcon,
                   )),
               IconButton(
                   onPressed: () {},
-                  icon: const HomeFeatureIcon(
-                    svgIcon: ImageAssets.bellIcon,
+                  icon: SvgPicture.asset(
+                    ImageAssets.bellIcon,
                   )),
             ],
-          )),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(children: [
           const BannerScreen(),

@@ -8,13 +8,13 @@ class BannerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       child: Container(
         height: getProportionateScreenHeight(110),
         width: double.infinity,
         decoration: BoxDecoration(
             color: ColorManager.kPrimaryColor,
-            borderRadius: BorderRadius.circular(30)),
+            borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 12),
           child: Column(

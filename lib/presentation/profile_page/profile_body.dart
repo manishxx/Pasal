@@ -5,10 +5,13 @@ import 'package:pasal/presentation/resources/assets_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 import 'package:pasal/presentation/profile_page/profile_menu.dart';
 
+import '../../data/local/shared_preferences/shared_preference_manager.dart';
 import '../resources/routes_manager.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({super.key});
+  final SharedPreferencesManager sharedPreferencesManager =
+      SharedPreferencesManager();
+  ProfileBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +49,7 @@ class ProfileBody extends StatelessWidget {
           text: "Log Out",
           icon: "assets/icons/Log out.svg",
           press: () async {
+            sharedPreferencesManager.clearAll();
             Navigator.of(context)
                 .pushNamedAndRemoveUntil(Routes.signInRoute, (route) => false);
           },

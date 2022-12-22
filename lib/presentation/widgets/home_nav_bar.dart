@@ -9,7 +9,7 @@ class HomeNavbar extends StatefulWidget {
   const HomeNavbar({super.key});
 
   @override
-  State<HomeNavbar> createState() => _HomeNavbarState();
+  State<HomeNavbar> get createState => _HomeNavbarState();
 }
 
 class _HomeNavbarState extends State<HomeNavbar> {
@@ -23,7 +23,7 @@ class _HomeNavbarState extends State<HomeNavbar> {
           children: [
             SizedBox(
               height: getProportionateScreenHeight(40),
-              width: getProportionateScreenWidth(250),
+              width: getProportionateScreenWidth(20),
               child: TextField(
                 onChanged: (value) {},
                 decoration: const InputDecoration(

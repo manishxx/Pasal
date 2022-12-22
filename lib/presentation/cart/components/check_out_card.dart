@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:pasal/app/constants/enums.dart';
-import 'package:pasal/orders/order_controller.dart';
+import 'package:pasal/presentation/orders/order_controller.dart';
 import 'package:pasal/presentation/esewa/esewa_page.dart';
 import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';

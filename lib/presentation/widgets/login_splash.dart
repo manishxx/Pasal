@@ -8,7 +8,7 @@ import '../resources/routes_manager.dart';
 class LoginSplash extends StatefulWidget {
   const LoginSplash({super.key});
   @override
-  State<LoginSplash> createState() => _LoginSplashState();
+  State<LoginSplash> get createState => _LoginSplashState();
 }
 
 class _LoginSplashState extends State<LoginSplash> {
