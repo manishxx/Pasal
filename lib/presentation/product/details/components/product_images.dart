@@ -10,7 +10,7 @@ class ProductImages extends StatefulWidget {
   final Products product;
 
   @override
-  State<ProductImages> createState() => _ProductImagesState();
+  State<ProductImages> get createState => _ProductImagesState();
 }
 
 class _ProductImagesState extends State<ProductImages> {

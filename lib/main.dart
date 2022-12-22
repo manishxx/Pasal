@@ -8,11 +8,13 @@ import 'package:pasal/data/local/shared_preferences/shared_preference_manager.da
 import 'package:pasal/presentation/resources/routes_manager.dart';
 import 'package:pasal/presentation/resources/theme.dart';
 
+import 'firebase_options.dart';
+
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await SharedPreferencesManager.getInstance();
   FirebaseMessaging.instance.getToken().then(
         (value) => log("getToken: $value"),

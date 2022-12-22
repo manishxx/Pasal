@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pasal/orders/order_screen.dart';
+import 'package:pasal/presentation/orders/order_screen.dart';
 import 'package:pasal/presentation/cart/cart_screen.dart';
 import 'package:pasal/presentation/home_screen/home_screen.dart';
 import 'package:pasal/presentation/intro_screen/intro_screen.dart';

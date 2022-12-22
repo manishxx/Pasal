@@ -13,7 +13,7 @@ class IntroScreenBody extends StatefulWidget {
   const IntroScreenBody({super.key});
 
   @override
-  IntroScreenBodyState createState() => IntroScreenBodyState();
+  IntroScreenBodyState get createState => IntroScreenBodyState();
 }
 
 class IntroScreenBodyState extends State<IntroScreenBody> {

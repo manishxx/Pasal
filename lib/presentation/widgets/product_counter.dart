@@ -6,7 +6,7 @@ class ProductCounter extends StatefulWidget {
   const ProductCounter({super.key});
 
   @override
-  ProductCounterState createState() => ProductCounterState();
+  ProductCounterState get createState => ProductCounterState();
 }
 
 class ProductCounterState extends State<ProductCounter> {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pasal/orders/order_body.dart';
-import 'package:pasal/orders/order_controller.dart';
+import 'package:pasal/presentation/orders/order_body.dart';
+import 'package:pasal/presentation/orders/order_controller.dart';
 
 class OrderScreen extends StatelessWidget {
   OrderScreen({super.key});

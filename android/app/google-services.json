@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "652090269752",
+    "project_id": "pasal-35ed8",
+    "storage_bucket": "pasal-35ed8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652090269752:android:19cfd57ffc9aa715f886cd",
+        "android_client_info": {
+          "package_name": "com.example.pasal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652090269752-46pn2o43jcu0l44gg639sen1vjilnije.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pasal",
+            "certificate_hash": "590806a36cf36f2855d38dfe28ac5078582b50d6"
+          }
+        },
+        {
+          "client_id": "652090269752-o9qmj7t7k52n2igb70ej8smrtb8t7quu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGE1KyIkhq0F01jC4sdWEMRCHVjPQMfgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652090269752-o9qmj7t7k52n2igb70ej8smrtb8t7quu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

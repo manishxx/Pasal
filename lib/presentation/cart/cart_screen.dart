@@ -15,7 +15,7 @@ class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
 
   @override
-  State<CartScreen> createState() => _CartScreenState();
+  State<CartScreen> get createState => _CartScreenState();
 }
 
 class _CartScreenState extends State<CartScreen> {
@@ -46,25 +46,31 @@ class _CartScreenState extends State<CartScreen> {
         child: SizedBox(
           height: getProportionateScreenWidth(40),
           width: getProportionateScreenWidth(40),
-          child: TextButton(
-            style: TextButton.styleFrom(
-                foregroundColor: ColorManager.kPrimaryColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(60)),
-                backgroundColor: Colors.white,
-                padding: EdgeInsets.zero),
-            onPressed: () => Navigator.pop(context),
-            child: SvgPicture.asset(
-              ImageAssets.backIcon,
-              height: 15,
+          child: Padding(
+            padding: const EdgeInsets.all(0.5),
+            child: TextButton(
+              style: TextButton.styleFrom(
+                  foregroundColor: ColorManager.kPrimaryColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(60)),
+                  backgroundColor: Colors.white,
+                  padding: EdgeInsets.zero),
+              onPressed: () => Navigator.pop(context),
+              child: SvgPicture.asset(
+                ImageAssets.backIcon,
+                height: 15,
+              ),
             ),
           ),
         ),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      title: const Text(
-        AppStrings.yourCart,
-        style: TextStyle(color: Colors.black),
+      title: const Padding(
+        padding: EdgeInsets.only(left: 20),
+        child: Text(
+          AppStrings.yourCart,
+          style: TextStyle(color: Colors.black),
+        ),
       ),
     );
   }

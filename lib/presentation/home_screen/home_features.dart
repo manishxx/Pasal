@@ -7,7 +7,7 @@ class HomeFeatures extends StatefulWidget {
   const HomeFeatures({super.key});
 
   @override
-  State<HomeFeatures> createState() => _HomeFeaturesState();
+  State<HomeFeatures> get createState => _HomeFeaturesState();
 }
 
 class _HomeFeaturesState extends State<HomeFeatures> {

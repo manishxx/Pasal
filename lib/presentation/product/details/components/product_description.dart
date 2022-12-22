@@ -14,7 +14,7 @@ class ProductDescription extends StatefulWidget {
   final GestureTapCallback? pressOnSeeMore;
 
   @override
-  State<ProductDescription> createState() => _ProductDescriptionState();
+  State<ProductDescription> get createState => _ProductDescriptionState();
 }
 
 class _ProductDescriptionState extends State<ProductDescription> {
