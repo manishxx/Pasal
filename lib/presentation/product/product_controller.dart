@@ -29,7 +29,10 @@ class ProductListController extends BaseController {
     List<Products>? products = await _apiServiceProvider.getProduct();
 
     productResponse.assignAll(products!);
-    productAvailable.value = products != null;
+    if (products.isNotEmpty) {
+      productAvailable.value = true;
+    }
+
     setState(ViewState.retrieved);
   }
 }

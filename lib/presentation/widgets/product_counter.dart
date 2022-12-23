@@ -19,9 +19,11 @@ class ProductCounterState extends State<ProductCounter> {
   }
 
   void _decrement() {
-    setState(() {
-      count--;
-    });
+    if (count > 0) {
+      setState(() {
+        count--;
+      });
+    }
   }
 
   @override

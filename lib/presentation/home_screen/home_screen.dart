@@ -9,8 +9,6 @@ import 'package:pasal/presentation/resources/strings_manager.dart';
 import 'package:pasal/presentation/widgets/banner.dart';
 import 'package:pasal/presentation/widgets/bottom_nav.dart';
 
-import 'package:pasal/presentation/widgets/home_feature_icon.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
